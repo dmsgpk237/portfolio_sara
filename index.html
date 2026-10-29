@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>권은혜 — Contents Producer</title>
+<meta name="description" content="기획·촬영·편집을 혼자서도 끝내고, 데이터로 다듬는 콘텐츠 프로듀서 권은혜의 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ee; --surface:#ffffff; --ink:#17140f; --muted:#6d665c; --line:#e3ddd3;
+  --accent:#e2453c; --accent-soft:#fbe4e1; --rec:#e2453c;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121110; --surface:#1b1a18; --ink:#f1ece4; --muted:#a39b8f; --line:#2e2b27;
+    --accent:#ff6a5f; --accent-soft:#3a1e1b;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121110; --surface:#1b1a18; --ink:#f1ece4; --muted:#a39b8f; --line:#2e2b27;
+  --accent:#ff6a5f; --accent-soft:#3a1e1b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans KR",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .logo{font-weight:900;text-decoration:none;letter-spacing:-.02em}
+nav ul{display:flex;gap:22px;list-style:none}
+nav ul a{text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500}
+nav ul a:hover{color:var(--ink)}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:.95rem}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.rec{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--rec);animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.2}}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1.12;font-weight:900;letter-spacing:-.04em;margin:22px 0 26px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--muted);max-width:640px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+
+/* timecode strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:72px}
+.strip div{padding:26px 20px;border-right:1px solid var(--line)}
+.strip div:last-child{border-right:0}
+.strip b{display:block;font-size:clamp(1.6rem,3.6vw,2.4rem);font-weight:900;letter-spacing:-.03em}
+.strip span{color:var(--muted);font-size:.88rem}
+
+/* sections */
+section{padding:88px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+.sec-head .mono{color:var(--accent)}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:900;letter-spacing:-.03em}
+
+/* about */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.about p{margin-bottom:16px;font-size:1.04rem}
+.flow{display:flex;flex-direction:column;gap:12px}
+.flow .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.flow .step .mono{color:var(--accent);display:block;margin-bottom:4px}
+.flow .step p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* experience */
+.exp{display:grid;grid-template-columns:180px 1fr;gap:12px 32px;padding:30px 0;border-top:1px solid var(--line)}
+.exp:first-of-type{border-top:0;padding-top:0}
+.exp .when{color:var(--muted)}
+.exp h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+.exp .role{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+.exp ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.exp li{position:relative;padding-left:18px}
+.exp li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:2px;background:var(--accent)}
+.result{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:700;padding:0 6px;border-radius:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-size:.78rem;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--muted)}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .frame{aspect-ratio:16/9;background:var(--ink);color:var(--bg);display:flex;align-items:flex-end;justify-content:space-between;padding:14px 16px;position:relative}
+.card .frame::before{content:"";position:absolute;inset:12px;border:1px dashed color-mix(in srgb,var(--bg) 35%,transparent);border-radius:8px}
+.card .frame .mono{position:relative;opacity:.85}
+.card .frame .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;opacity:.9}
+.card .body{padding:20px}
+.card h3{font-size:1.05rem;font-weight:700;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.92rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.bar{margin-bottom:18px}
+.bar .top{display:flex;justify-content:space-between;font-weight:500;margin-bottom:6px}
+.bar .top span{color:var(--muted);font-size:.88rem}
+.bar .track{height:6px;background:var(--line);border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;background:var(--ink);border-radius:999px}
+.list-rows div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.list-rows div:first-child{padding-top:0}
+.list-rows span{color:var(--muted);white-space:nowrap}
+
+/* contact */
+.contact{padding:110px 0 80px;text-align:center;border-bottom:0}
+.contact h2{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:900;letter-spacing:-.04em;line-height:1.2;margin-bottom:28px}
+.contact a.mail{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:700;text-decoration:none;border-bottom:3px solid var(--accent)}
+footer{padding:28px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}.rec::before{animation:none}}
+
+@media (max-width:820px){
+  nav ul{display:none}
+  .about,.skills{grid-template-columns:1fr;gap:32px}
+  .grid{grid-template-columns:1fr 1fr}
+  .exp{grid-template-columns:1fr;gap:4px}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip div:nth-child(2){border-right:0}
+  .strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:540px){
+  .wrap{padding:0 16px}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:64px 0 48px}
+  section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">권은혜</a>
+    <ul>
+      <li><a href="#about">소개</a></li>
+      <li><a href="#experience">경력</a></li>
+      <li><a href="#works">작업</a></li>
+      <li><a href="#skills">기술</a></li>
+      <li><a href="#contact">연락</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="mono rec">REC · Contents Producer</span>
+    <h1>감각으로 만들고,<br><em>데이터로</em> 다듬습니다.</h1>
+    <p class="lead">기획부터 촬영, 편집, 종편까지 혼자서도 끝낼 수 있는 콘텐츠 프로듀서 권은혜입니다. 시청자 데이터로 타겟의 취향을 읽고, 반복 가능한 제작 구조로 꾸준히 결과를 냅니다.</p>
+    <div class="cta">
+      <a class="btn primary" href="#works">작업 보기 →</a>
+      <a class="btn" href="mailto:rcnkuh@naver.com">rcnkuh@naver.com</a>
+    </div>
+
+    <div class="strip">
+      <div><b>10×</b><span>릴스 평균 조회수 5만 → 50만</span></div>
+      <div><b>20×</b><span>학원 SNS 평균 조회수 1천 → 2만</span></div>
+      <div><b>52편</b><span>1년간 매주 뉴스 발행</span></div>
+      <div><b>30편</b><span>어린이 교육 영상 총감독</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">01</span><h2>소개</h2></div>
+    <div class="about">
+      <div class="reveal">
+        <p>경기영상과학고 방송촬영조명과에서 처음 카메라를 잡은 뒤, 지금까지 한 번도 영상을 떠난 적이 없습니다. 교회 미디어팀과 뉴스팀, 인도네시아 해외 프로젝트, 어린이 교육 콘텐츠, 데이터 기반 SNS 운영, 영상 강의까지 성격이 전혀 다른 현장을 거쳐 왔습니다.</p>
+        <p>그 과정에서 배운 건 두 가지입니다. 좋은 콘텐츠는 <strong>타겟의 취향을 얼마나 정확히 읽느냐</strong>에서 갈리고, 꾸준한 결과는 개인의 감각보다 <strong>반복 가능한 구조</strong>에서 나온다는 것.</p>
+        <p>그래서 저는 일이 막히면 사람을 탓하기보다 일이 돌아가는 구조를 먼저 다시 설계합니다.</p>
+      </div>
+      <div class="flow reveal">
+        <div class="step"><span class="mono">Plan · 기획</span><p>성과 데이터에서 타겟과 선호 요소(컬러·분위기·음악)를 도출해 기획 기준을 세웁니다.</p></div>
+        <div class="step"><span class="mono">Shoot · 촬영</span><p>방송촬영 전공 기반. 낯선 해외 현장에서도 짧은 일정 안에 촬영을 마칩니다.</p></div>
+        <div class="step"><span class="mono">Edit · 편집</span><p>자극보다 리듬. 늘어지지 않게 호흡을 조절하는 절제된 컷 편집을 지향합니다.</p></div>
+        <div class="step"><span class="mono">Review · 분석</span><p>게시물마다 조회·저장·반응을 기록하고 다음 콘텐츠에 반영합니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">02</span><h2>경력 · 경험</h2></div>
+
+    <article class="exp reveal">
+      <div class="when mono">2026.03 — 현재</div>
+      <div>
+        <h3>국어학원 SNS 마케팅</h3>
+        <div class="role">콘텐츠 기획 · 데이터 분석 (1인 운영)</div>
+        <ul>
+          <li>게시물마다 조회수·저장·반응 수를 기록해 다음 콘텐츠의 소재와 톤에 반영하는 운영 방식 도입</li>
+          <li>평균 조회수 <span class="result">1,000회 → 2만 회</span></li>
+        </ul>
+        <div class="tags"><span class="tag">CapCut</span><span class="tag">Premiere Pro</span><span class="tag">Canva</span></div>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2026.03 — 현재</div>
+      <div>
+        <h3>대안학교 중등 영상 제작 강사</h3>
+        <div class="role">강의 · 커리큘럼 설계</div>
+        <ul>
+          <li>중등 학생 대상 영상 기획·촬영·편집 실습 중심 커리큘럼 설계 및 강의</li>
+          <li>같은 개념도 학생 눈높이에 맞게 순서와 예시를 다르게 구성하는 전달법 체득</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2022.06 — 2024.01</div>
+      <div>
+        <h3>리틀앤빅 · 글로벌(인도네시아) SNS 마케팅</h3>
+        <div class="role">Contents Producer — 기획 · 촬영 · 편집 (3인 팀)</div>
+        <ul>
+          <li>화장품·식품·패션 카테고리 인스타그램 릴스, 유튜브 뷰티 콘텐츠 기획·제작</li>
+          <li>릴스 성과 데이터로 반응 좋은 타겟(성별·연령대)과 선호 요소(컬러·분위기·음악)를 정리해 기획 기준 재설정 → 평균 조회수 <span class="result">5만 → 50만 회</span>, SNS 광고 협업 2건 연결</li>
+          <li>2022.09 인도네시아 현지 출장, K-POP 콘테스트 SNS 마케팅 기획·촬영 → 일주일 일정 안에 콘텐츠 5편 완성</li>
+        </ul>
+        <div class="tags"><span class="tag">Premiere Pro</span><span class="tag">After Effects</span><span class="tag">Instagram Reels</span><span class="tag">YouTube</span></div>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2022.06 — 2022.12</div>
+      <div>
+        <h3>㈜퍼플러스 코코힐리</h3>
+        <div class="role">Contents Producer — 총감독</div>
+        <ul>
+          <li>'10Q' 어린이 미술치료 클래스 영상 30편 기획안·스크립트·촬영·편집 총괄</li>
+          <li>회차별 학습 목표에 맞춘 30개의 서로 다른 스토리라인 구성, 어린이 화장품 클래스 영상 디자인·편집 병행</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2022.03 — 2023.03</div>
+      <div>
+        <h3>YRC 뉴스팀</h3>
+        <div class="role">뉴스 제작 총괄</div>
+        <ul>
+          <li>혼자 맡던 기획·촬영·편집을 가편·종편·내레이션·촬영 4개 파트 로테이션으로 재설계</li>
+          <li>매주 뉴스 기획·디자인, 가편 총괄 및 종편 진행 → 약 1년간 <span class="result">52편</span> 매주 발행 유지</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2022.02 — 2022.04</div>
+      <div>
+        <h3>NGO 유니월드</h3>
+        <div class="role">홍보 마케팅 팀원</div>
+        <ul>
+          <li>선교지 홍보영상·홍보디자인 제작, 메타버스 후원 연동 홍보영상 기획·제작</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2021.01 — 2021.02</div>
+      <div>
+        <h3>강남 해커스</h3>
+        <div class="role">강의 영상 제작자</div>
+        <ul><li>강의 촬영 및 편집</li></ul>
+      </div>
+    </article>
+
+    <article class="exp reveal">
+      <div class="when mono">2019.01 — 2022.12</div>
+      <div>
+        <h3>Yewon Univ.237</h3>
+        <div class="role">미디어 총괄</div>
+        <ul>
+          <li>코로나 기간 대학생 예능 시리즈 4부작, 메타버스&amp;AI 인터뷰 시리즈 2부작 기획·촬영·제작</li>
+          <li>각종 홍보영상·뮤직비디오 다수 기획 및 제작</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">03</span><h2>주요 작업</h2></div>
+    <!-- 영상 링크가 생기면 각 카드의 .frame 을 <iframe src="https://www.youtube.com/embed/영상ID" ...> 로 바꾸세요 -->
+    <div class="grid">
+      <article class="card reveal">
+        <div class="frame"><span class="play">▶</span><span class="mono">Reels</span><span class="mono">2022–24</span></div>
+        <div class="body"><h3>인도네시아 타겟 릴스</h3><p>데이터 기반 기획 재설정으로 평균 조회수 10배 성장, 광고 협업 2건.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="frame"><span class="play">▶</span><span class="mono">Field</span><span class="mono">2022.09</span></div>
+        <div class="body"><h3>K-POP 콘테스트 현지 촬영</h3><p>낯선 환경과 일주일 일정 안에 SNS 콘텐츠 5편 완성.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="frame"><span class="play">▶</span><span class="mono">Series · 30</span><span class="mono">2022</span></div>
+        <div class="body"><h3>10Q 어린이 미술치료 클래스</h3><p>30편 교육 영상 총감독. 기획안부터 완성본까지.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="frame"><span class="play">▶</span><span class="mono">Weekly · 52</span><span class="mono">2022–23</span></div>
+        <div class="body"><h3>YRC 주간 뉴스</h3><p>4개 파트 로테이션 체계로 1년간 매주 발행.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="frame"><span class="play">▶</span><span class="mono">Series · 4</span><span class="mono">2020–21</span></div>
+        <div class="body"><h3>대학생 학교 예능 시리즈</h3><p>학교에 가지 못하는 학생들을 위해 대신 학교에 가보는 4부작.</p></div>
+      </article>
+      <article class="card reveal">
+        <div class="frame"><span class="play">▶</span><span class="mono">Interview · 2</span><span class="mono">2021–22</span></div>
+        <div class="body"><h3>메타버스 &amp; AI 인터뷰</h3><p>관련 종사자 인터뷰로 풀어낸 2부작 시리즈.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="mono">04</span><h2>기술 · 자격 · 학력</h2></div>
+    <div class="skills">
+      <div class="reveal">
+        <div class="bar"><div class="top">Premiere Pro <span>상</span></div><div class="track"><div class="fill" style="width:90%"></div></div></div>
+        <div class="bar"><div class="top">Photoshop <span>상 · GTQ 1급</span></div><div class="track"><div class="fill" style="width:88%"></div></div></div>
+        <div class="bar"><div class="top">After Effects <span>중</span></div><div class="track"><div class="fill" style="width:62%"></div></div></div>
+        <div class="bar"><div class="top">CapCut · Canva <span>상</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+        <div class="bar"><div class="top">HTML · CSS · JavaScript <span>초급</span></div><div class="track"><div class="fill" style="width:35%"></div></div></div>
+        <div class="tags" style="margin-top:20px"><span class="tag">기획</span><span class="tag">촬영</span><span class="tag">색보정</span><span class="tag">사진</span><span class="tag">데이터 분석</span></div>
+      </div>
+      <div class="reveal">
+        <div class="list-rows">
+          <div><b>GTQ 그래픽기술자격 1급</b><span>2024.12</span></div>
+          <div><b>멀티미디어콘텐츠제작전문가</b><span>2025.12</span></div>
+          <div><b>자바 풀스택 개발 과정 수료</b><span>2025.01</span></div>
+          <div><b>명지대 미디어앤아트테크놀로지학과</b><span>2027.02 졸업 예정</span></div>
+          <div><b>숭실대 글로벌미래교육원 멀티미디어학과</b><span>2021.02</span></div>
+          <div><b>경기영상과학고 방송촬영조명과</b><span>2018.01</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <span class="mono" style="color:var(--accent)">05 · Contact</span>
+    <h2 style="margin-top:16px">보는 사람에게<br>제대로 전달되는 콘텐츠를 만듭니다.</h2>
+    <a class="mail" href="mailto:rcnkuh@naver.com">rcnkuh@naver.com</a>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 권은혜 · Eunhye Kwon</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
